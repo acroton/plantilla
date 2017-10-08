@@ -1,0 +1,18 @@
+default: &default
+  adapter: mysql2
+  host: localhost
+  user: root 
+  password: '123'
+  timeout: 5000
+
+development:
+  <<: *default
+  database: plantilla_dev
+
+production:
+  <<: *default
+  database: plantilla_pro
+  username: root
+  password: '123'
+
+

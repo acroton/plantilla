@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-lg-12 col-xlg-6">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">Lista de Ciudades</h4>
+                <div class="button-group pull right">
+                    <%= link_to "crear ciudad", new_city_path, class: 'btn btn-success' %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+<!-- column -->
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-block">
+            
+            <div class="table-responsive">
+                <table class="table data-table">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Nombre</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>                        
+                        <% @cities.each do |city| %>
+                        <tr>
+                            <td><%= city.id %></td>
+                            <td><%= city.name %></td>
+                            <td><span><%= link_to "Detalle", city_path(city), class: 'btn btn-danger btn-xs' %></span> </td>
+                        </tr>
+                        <% end -%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('.data-table').dataTable().fnSort( [ [1,'asc'] ] );
+    })
+</script>

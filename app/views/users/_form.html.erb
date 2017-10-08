@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-lg-12 col-xlg-6">
+        <div class="card">
+            <div class="card-block">
+                <%= form_for(@user) do |f| %>
+
+                <table class="table">
+
+                    <tr>
+                        <td width="30%"><%= f.label :first_name, "Nombre" %></td>
+                        <td><%= f.text_field :first_name ,class: 'form-control' %></td>
+                    </tr>    
+                    <tr>
+                        <td><%= f.label :last_name, "Apellido" %></td>
+                        <td><%= f.text_field :last_name, class: 'form-control' %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label :email, "Email" %></td>
+                        <td><%= f.text_field :email, class: 'form-control' %></td>
+                    </tr>
+                    <tr>
+                        <td width="30%"><%= f.label :password, "Contraseña" %></td>
+                        <td><%= f.password_field :password, class: 'form-control' %></td>
+                    </tr>
+                    <tr>
+                        <td><%= f.label :password_confirmation, "Confirmacion de contraseña" %></td>
+                        <td><%= f.password_field :password_confirmation, class: 'form-control' %></td>
+                    </tr>
+                    
+                </table>
+
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <%= link_to "Atras", users_path, class: 'btn btn-default' %>
+                        <%= link_to "Cancelar", user_path(@user), class: 'btn btn-warning' if !@user.id.nil? %>
+                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                    </div>
+                </div>
+
+                <% end -%>
+            </div>
+        </div>
+    </div>
+</div>

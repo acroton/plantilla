@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-lg-12 col-xlg-6">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">Detalles de lugar</h4>
+                <div class="button-group pull right">
+                    <%= link_to 'Regresar', places_path, class: 'btn btn-default' %>
+                    <%= link_to "Editar", edit_place_path(@place), class: 'btn btn-primary' %>            
+                    <%= link_to "Borrar", place_path(@place), class: 'btn btn-danger', data: {method: 'DELETE', confirm: 'estas seguro?'} %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 col-xlg-6">
+        <div class="card">
+            <div class="card-block">
+                <table class="table">
+                    <tr>
+                        <td><b>id:</b></td>
+                        <td><%= @place.id %></td>
+                    </tr>            
+                    <tr>
+                        <td><b>Acronimo:</b></td>
+                        <td><%= @place.acronym %></td> 
+                    </tr>
+                    <tr>
+                        <td><b>Nombre:</b></td>
+                        <td><%= @place.name %></td> 
+                    </tr>
+                    <tr>
+                        <td><b>Ciudad:</b></td>
+                        <td><%= @place.city.name unless @place.city.nil? %></td>
+                    </tr>
+                    <tr>
+                        <td><b>Direccion:</b></td>
+                        <td><%= @place.address %></td>
+                    </tr>
+                    <tr>
+                        <td><b>Telefono:</b></td>
+                        <td><%= @place.phone %></td>
+                    </tr>  
+                    <tr>
+                        <td><b>latitud:</b></td>
+                        <td><%= @place.latitude %></td>
+                    </tr>  
+                    <tr>
+                        <td><b>longitud:</b></td>
+                        <td><%= @place.longitude %></td>
+                    </tr>  
+                    <tr>
+                        <td><b>Email:</b></td>
+                        <td><%= @place.email %></td>
+                    </tr>    
+               
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
